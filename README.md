@@ -12,5 +12,5 @@ Instructor: Chris Parker
 Group Member Info  
 (name, email)  
 Yahia Abrini - yahia.abrini@ucalgary.ca  
-Nestor Chacin - nachacin@ucalgary.ca
+Nestor Chacin - nachacin@ucalgary.ca  
 Nasih Nazeem - nasih.mohamednazeem@ucalgary.ca

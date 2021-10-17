@@ -8,10 +8,12 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef GPIO_H
-#define	GPIO_H
+#ifndef TIMERS_H
+#define	TIMERS_H
 
 #include "xc.h"
+
+// TODO Insert declarations
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -34,6 +36,7 @@
 
     <p><b>Remarks:</b></p>
  */
-void io_init(void);
+void delay(uint16_t, uint8_t);
 
 #endif
+

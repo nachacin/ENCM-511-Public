@@ -1,14 +1,20 @@
 /*
+ * Course:    ENCM 511
+ * Section:   L02 - B04
+ * Group:     4
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
+ */
+
+/*
  *  Delay Function
  *  Inputs: tmr_ticks which is an unsigned int to be used for PR2
  *          idle_on which is a flag used to trigger idle mode
  *  Return: nothing
  *
  */
-#include "Timers.h"
+#include "timers.h"
 
-void delay(uint16_t tmr_ticks, uint8_t idle_on)
-{
+void delay(uint16_t tmr_ticks, uint8_t idle_on) {
     
     //T2CON config
     T2CONbits.TSIDL = 0; //operate in idle mode

@@ -1,8 +1,9 @@
 /* 
- * File:   
- * Author: 
- * Comments:
- * Revision history: 
+ * File: 
+ * Course:    ENCM 511
+ * Section:   L02 - B04
+ * Group:     4
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
  */
 
 /* This header file is included in order to get bonus marks... 
@@ -12,16 +13,10 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef CLOCKS_H
+#define	CLOCKS_H
 
-#include <xc.h> // include processor files - each processor file is guarded.  
-
-// TODO Insert appropriate #include <>
-
-// TODO Insert C++ class definitions if appropriate
-
-// TODO Insert declarations
+#include "xc.h" // include processor files - each processor file is guarded.
 
 // Comment a function and leverage automatic documentation with slash star star
 /**
@@ -47,16 +42,5 @@
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation
 
-#ifdef	__cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-    // TODO If C++ is being used, regular C code needs function names to have C 
-    // linkage so the functions can be used by the c code. 
-
-#ifdef	__cplusplus
-}
-#endif /* __cplusplus */
-
-#endif	/* XC_HEADER_TEMPLATE_H */
+#endif
 

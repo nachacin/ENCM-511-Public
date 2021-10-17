@@ -6,8 +6,8 @@
                    projectFiles="true">
       <itemPath>config.h</itemPath>
       <itemPath>gpio.h</itemPath>
-      <itemPath>Timers.h</itemPath>
       <itemPath>clocks.h</itemPath>
+      <itemPath>timers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -17,8 +17,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>gpio.c</itemPath>
-      <itemPath>TimeDelay.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>timers.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -1,17 +1,18 @@
-#include "interrupts.h"
-
 /*
- *  Timer 2 Interrupt Service Routine
- *  Inputs: nothing
- *  Return: nothing
+ * Course:    ENCM 511
+ * Section:   L02 - B04
+ * Group:     4
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
  */
 
-extern int PB1_push;
-extern int PB2_push;
-extern int PB3_push;
-extern int CN0flag; // Will represent a recent change of the RB4/CN1 pin
-extern int CN1flag; // Will represent a recent change of the RB4/CN1 pin
-extern int CN30flag; // Will represent a recent change of the RA2/CN30 pin
+#include "interrupts.h"
+
+int PB1_push;
+int PB2_push;
+int PB3_push;
+int CN0flag; // Will represent a recent change of the RB4/CN1 pin
+int CN1flag; // Will represent a recent change of the RB4/CN1 pin
+int CN30flag; // Will represent a recent change of the RA2/CN30 pin
 
 void __attribute__((interrupt, no_auto_psv)) _T2Interrupt(void) {
      IFS0bits.T2IF = 0; //Clear timer 2 interrupt flag

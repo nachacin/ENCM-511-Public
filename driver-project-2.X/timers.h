@@ -13,28 +13,12 @@
 
 #include "xc.h"
 
-// TODO Insert declarations
-
-// Comment a function and leverage automatic documentation with slash star star
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
-
-    <p><b>Description:</b></p>
-
-    <p><b>Precondition:</b></p>
-
-    <p><b>Parameters:</b></p>
-
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
+/*
+ *  Delay Function
+ *  Inputs: uint16_t tmr_ticks which is an unsigned int to be used for PR2
+ *          uint8_t idle_on which is a flag used to trigger idle mode
+ *  Return: nothing
+ *
  */
 void delay(uint16_t, uint8_t);
 

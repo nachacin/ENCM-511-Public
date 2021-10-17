@@ -708,8 +708,6 @@
         <property key="memories.programmemory.ranges" value="0-2bff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="false"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/nesto/Desktop/ENCM-511-Projects/driver-project-2.X/debug/default/driver-project-2_ptg"/>
         <property key="programmerToGoImageName" value="driver-project-2_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

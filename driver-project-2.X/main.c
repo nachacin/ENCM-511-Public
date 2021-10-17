@@ -26,7 +26,7 @@ int main(void) {
     unsigned int ctr_delay3 = 1;            // Initiate alternate variable for PR2
     unsigned int flag_idle = 1;             // Flag to initiate idle() processor state
     
-    ctr_delay1 = 10000;                     // approx 1 sec delay
+    ctr_delay1 = 1000;                     // approx 1 sec delay
     ctr_delay2 = ctr_delay1*2;              // approx 2 sec delay
     ctr_delay3 = ctr_delay1*3;              // approx 3 sec delay
     io_init();                            // Setup GPIO

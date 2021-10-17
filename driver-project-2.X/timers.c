@@ -31,8 +31,8 @@ void delay(uint16_t tmr_ticks, uint8_t idle_on) {
     IPC1bits.T2IP = 3;  //7 is highest and 1 is lowest priority
     IEC0bits.T2IE = 1;  //enable timer interrupt
     IFS0bits.T2IF = 0;  // Clear timer 2 flag
-    
-    PR2 = tmr_ticks;    //PR2 stores the target to trigger T2 interrupt
+    int eq_ticks = tmr_ticks * 15.627;
+    PR2 = eq_ticks;    //PR2 stores the target to trigger T2 interrupt
     TMR2 = 0;           //zero TMR2 register to start
     T2CONbits.TON = 1;  //start timer 2
     
@@ -44,4 +44,3 @@ void delay(uint16_t tmr_ticks, uint8_t idle_on) {
     TMR2 = 0;           //zero TMR2 register on exit
     return;
 }
-

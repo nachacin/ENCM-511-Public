@@ -13,27 +13,9 @@
 
 #include "xc.h"
 
-// Comment a function and leverage automatic documentation with slash star star
-/**
-    <p><b>Function prototype:</b></p>
-  
-    <p><b>Summary:</b></p>
+/* This function is used to initialize all the input and outpin pins. Physical
+resistors were used for pull-up and pull-down purposes. */
 
-    <p><b>Description:</b></p>
-
-    <p><b>Precondition:</b></p>
-
-    <p><b>Parameters:</b></p>
-
-    <p><b>Returns:</b></p>
-
-    <p><b>Example:</b></p>
-    <code>
- 
-    </code>
-
-    <p><b>Remarks:</b></p>
- */
 void io_init(void);
 
 #endif

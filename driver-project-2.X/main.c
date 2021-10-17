@@ -15,13 +15,6 @@
 #include "timers.h"
 #include "interrupts.h"
 
-int PB1_push;
-int PB2_push;
-int PB3_push;
-int CN0flag; // Will represent a recent change of the RB4/CN1 pin
-int CN1flag; // Will represent a recent change of the RB4/CN1 pin
-int CN30flag; // Will represent a recent change of the RA2/CN30 pin
-
 /*
  * Main code function - will be a while 1 structure that will execute forever
  */

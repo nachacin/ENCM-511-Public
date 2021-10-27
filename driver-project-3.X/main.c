@@ -35,8 +35,8 @@ int main(void) {
     while (1) {
         if ((PB1_push + PB2_push + PB3_push) >= 2) {
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
-            LATBbits.LATB8 = 1;             //turn on LED when button pressed 
-            delay (ctr_delay1, flag_idle);  //initiate a delay (one shot)
+            LATBbits.LATB8 = 1;             // turn on LED when button pressed 
+            delay (ctr_delay1, flag_idle);  // initiate a delay (one shot)
             IEC1bits.CNIE = 1;              // re-enables interrupts 
         } else if (PB1_push == 1) {
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce                
@@ -61,6 +61,7 @@ int main(void) {
             IEC1bits.CNIE = 1;              // re-enables interrupts 
         } else {
             LATBbits.LATB8 = 0;             //turn off LED as a default state
+            Sleep();
         }
     }
     return (0);

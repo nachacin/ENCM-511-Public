@@ -13,6 +13,8 @@
 #include "gpio.h"
 #include "timers.h"
 #include "interrupts.h"
+#include "UART2.h"
+#include "clocks.h"
 
 /*
  * Main code function - will be a while 1 structure that will execute forever
@@ -29,7 +31,7 @@ int main(void) {
     ctr_delay2 = ctr_delay1*2;             // approx 2 sec (2000 ms) delay
     ctr_delay3 = ctr_delay1*3;             // approx 3 sec (3000 ms) delay
     io_init();                             // Setup GPIO
-
+    clock_switch(8);
    
     // IF structure checks different pushbutton conditions to execute requested conditions
     while (1) {
@@ -39,12 +41,13 @@ int main(void) {
             delay (ctr_delay1, flag_idle);  // initiate a delay (one shot)
             IEC1bits.CNIE = 1;              // re-enables interrupts 
         } else if (PB1_push == 1) {
-            IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce                
+            IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
             LATBbits.LATB8 = 1;             //turn on LED when button pressed 
             delay (ctr_delay1, flag_idle);  //initiate a delay (one shot)
             LATBbits.LATB8 = 0;             //turn off LED
             delay (ctr_delay1, flag_idle);  //initiate a delay (one shot)
-            IEC1bits.CNIE = 1;              // re-enables interrupts 
+            IEC1bits.CNIE = 1;              // re-enables interrupts
+            XmitUART2('J', 1);
         } else if (PB2_push == 1) {
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
             LATBbits.LATB8 = 1;             //turn on LED when button pressed 

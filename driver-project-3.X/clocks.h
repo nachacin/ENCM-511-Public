@@ -17,5 +17,7 @@
 
 #include "xc.h" // include processor files - each processor file is guarded.
 
+void clock_switch(int selection);
+
 #endif
 

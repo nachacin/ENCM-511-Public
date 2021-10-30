@@ -7,6 +7,8 @@
  * Created on October 13, 2021, 5:29 PM
  */
 
+#include <stdio.h> // include standard IO library - needed for printf()
+
 //Include the compiler structures
 #include "xc.h"
 #include "config.h"
@@ -35,12 +37,32 @@ int main(void) {
    
     // IF structure checks different pushbutton conditions to execute requested conditions
     while (1) {
-        if ((PB1_push + PB2_push + PB3_push) >= 2) {
+        if (PB1_push && PB2_push && PB3_push) {
+            printf("All PBs pressed");      // printing message describing pushbuttons to PC terminal
+            IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
+            LATBbits.LATB8 = 1;             // turn on LED when button pressed 
+            delay (ctr_delay1, flag_idle);  // initiate a delay (one shot)
+            IEC1bits.CNIE = 1;              // re-enables interrupts 
+        } else if (PB1_push && PB2_push) {
+            printf("PB1 and PB2 are pressed"); // printing message describing pushbuttons to PC terminal
+            IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
+            LATBbits.LATB8 = 1;             // turn on LED when button pressed 
+            delay (ctr_delay1, flag_idle);  // initiate a delay (one shot)
+            IEC1bits.CNIE = 1;              // re-enables interrupts 
+        } else if (PB2_push && PB3_push) {
+            printf("PB2 and PB3 are pressed"); // printing message describing pushbuttons to PC terminal
+            IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
+            LATBbits.LATB8 = 1;             // turn on LED when button pressed 
+            delay (ctr_delay1, flag_idle);  // initiate a delay (one shot)
+            IEC1bits.CNIE = 1;              // re-enables interrupts 
+        } else if (PB1_push && PB3_push) {
+            printf("PB1 and PB3 are pressed"); // printing message describing pushbuttons to PC terminal
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
             LATBbits.LATB8 = 1;             // turn on LED when button pressed 
             delay (ctr_delay1, flag_idle);  // initiate a delay (one shot)
             IEC1bits.CNIE = 1;              // re-enables interrupts 
         } else if (PB1_push == 1) {
+            printf("PB1 is pressed");       // printing message describing pushbuttons to PC terminal
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
             LATBbits.LATB8 = 1;             //turn on LED when button pressed 
             delay (ctr_delay1, flag_idle);  //initiate a delay (one shot)
@@ -49,6 +71,7 @@ int main(void) {
             IEC1bits.CNIE = 1;              // re-enables interrupts
             XmitUART2('J', 1);
         } else if (PB2_push == 1) {
+            printf("PB2 is pressed");       // printing message describing pushbuttons to PC terminal
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
             LATBbits.LATB8 = 1;             //turn on LED when button pressed 
             delay (ctr_delay2, flag_idle);  //initiate a delay (one shot)
@@ -56,6 +79,7 @@ int main(void) {
             delay (ctr_delay2, flag_idle);  //initiate a delay (one shot)
             IEC1bits.CNIE = 1;              // re-enables interrupts 
         } else if (PB3_push == 1) {
+            printf("PB3 is pressed");       // printing message describing pushbuttons to PC terminal
             IEC1bits.CNIE = 0;              // disabling interrupts to prevent ground bounce
             LATBbits.LATB8 = 1;             //turn on LED when button pressed 
             delay (ctr_delay3, flag_idle);  //initiate a delay (one shot)
@@ -63,6 +87,7 @@ int main(void) {
             delay (ctr_delay3, flag_idle);  //initiate a delay (one shot)
             IEC1bits.CNIE = 1;              // re-enables interrupts 
         } else {
+            printf("Nothing pressed");      // printing message describing pushbuttons to PC terminal
             LATBbits.LATB8 = 0;             //turn off LED as a default state
             Sleep();
         }

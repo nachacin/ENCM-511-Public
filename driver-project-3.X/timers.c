@@ -32,7 +32,27 @@ void delay(uint16_t delay_ms, uint8_t idle_on) {
     IEC0bits.T2IE = 1;  //enable timer interrupt
     IFS0bits.T2IF = 0;  // Clear timer 2 flag
     
-    int equivalent_ticks = delay_ms/0.064; 
+    
+    int equivalent_ticks;
+    // Pass the value that selects the current
+    // oscillator.
+    int selection = OSCCONbits.COSC; 
+    
+    
+    // Switch statement to scale the amount of ticks to an appropriate number 
+    // depending on what oscillator is picked.
+    switch(selection) {
+        case 111:
+            equivalent_ticks = delay_ms*16;
+            break;
+        case 110:
+            equivalent_ticks = delay_ms;
+            break;
+    }
+    
+    
+    
+    //int equivalent_ticks = delay_ms/0.064; 
     /* 0.064 comes from simplifying the following function: 
      * ((8000000/256)/2)*(delay_ms/1000); 
      * this function takes into account the 256 pre-scaler, the Fosc/2, and

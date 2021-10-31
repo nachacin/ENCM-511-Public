@@ -67,6 +67,14 @@ extern int persist;
  */
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation
+
+
+/* PROMISES: Depending on the state of each individual pushbutton, this function
+ *           updates the state integer after passing the appropriate if-statement.
+ *           Returns a value of 1 or 0 depending on whether the program is 
+ *           sleeping or not.
+ * REQUIRES: No parameters required.
+ */
 int stat_update();
 
 #endif	/* XC_HEADER_TEMPLATE_H */

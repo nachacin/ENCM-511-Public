@@ -2,6 +2,11 @@
 #include "UART2.h"
 #include "stat_update.h"
 
+/* PROMISES: Depending on the state of the program, this function will 
+ * communicate with a receiver relaying information about what buttons are being
+ * pressed.
+ * PROMISES: No parameters required.
+ */
 void uart_com(){
     switch(state){
         case 1:     // PB1 is Pressed

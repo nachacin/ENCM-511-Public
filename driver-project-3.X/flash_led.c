@@ -5,7 +5,12 @@ static unsigned int ctr_delay2 = 2000;             // approx 2 sec (2000 ms) del
 static unsigned int ctr_delay3 = 3000;             // approx 3 sec (3000 ms) delay
 unsigned int flag_idle = 1;             // Flag to initiate idle() processor state    
 
-
+/*PROMISES: This function checks the state of the device and then updates the
+ * output pin (LED) and initiates a delay sequence for that output pin if 
+ * necessary.
+ *
+ * REQUIRES: No parameters required.
+ */
 void flash_led() {
     switch(state) {
         case 1:     // PB1 is Pressed

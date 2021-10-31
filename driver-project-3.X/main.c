@@ -28,7 +28,7 @@ int main(void) {
     CLKDIV = 0; // change default timing from 2:1 to 1:1; keep frequency at 8MHz
     
     io_init();                             // Setup GPIO
-    clock_switch(8);
+    clock_switch(8); // Ensure oscillator is intially set to 8 MHz (Select 8 MHz)
     update = 1;  // trigger an update for startup
     int stat;
     

@@ -35,11 +35,10 @@ int main(void) {
     while (1) {
         if (update == 1) {
             stat = stat_update();
-        }
-        if (stat == 0) {
             uart_com();
             flash_led();
-        } else {
+        }
+        if (stat == 1) {
             Sleep();
         }
     }

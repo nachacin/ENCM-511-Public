@@ -70,6 +70,10 @@
  * REQUIRES: No parameters required.
  */
 void flash_led();
+/* Requires: LATB8 must be set as a digital output 
+ * Promises: LATB8 will be set to logic low voltage
+ */
+void LED_shut_off();
 
 #endif	/* FLASH_LED_H */
 

@@ -10,7 +10,7 @@ int update;
 
 int stat_update() {
     IEC1bits.CNIE = 0;                      // disabling interrupts to prevent ground bounce
-    if ((PB1_push + PB2_push + PB3_push) >= 2){
+    if ((PB1_push + PB2_push + PB3_push) == 3){
         state = 7;
     } else if (PB1_push && PB2_push) {
         state = 4;

@@ -28,6 +28,7 @@ int main(void) {
     
     io_init();                             // Setup GPIO
     clock_switch(8);
+    update = 1;  // trigger an update for startup
     int stat;
     
    

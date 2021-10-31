@@ -7,6 +7,8 @@
  * Created on October 13, 2021, 5:29 PM
  */
 
+#include <stdio.h> // include standard IO library - needed for printf()
+
 //Include the compiler structures
 #include "xc.h"
 #include "config.h"
@@ -18,7 +20,6 @@
 #include "stat_update.h"
 #include "flash_led.h"
 #include "uart_com.h"
-
 
 /*
  * Main code function - will be a while 1 structure that will execute forever

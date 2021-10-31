@@ -38,6 +38,7 @@ extern int PB2_push; // declaring PBN1_push
 extern int PB3_push; // declaring PB3_push
 extern int state;
 extern int update;
+extern int persist;
 
 // TODO Insert appropriate #include <>
 

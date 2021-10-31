@@ -36,6 +36,7 @@ void __attribute__((interrupt, no_auto_psv)) _CNInterrupt(void) {
             PB3_push = 1; // set PB3_push to 1
         }
         update = 1;
+        persist = 0;
     }
     /* Clear input change notification interrupt flag status bit */
     IFS1bits.CNIF = 0;

@@ -38,7 +38,9 @@ int main(void) {
         if (update == 1) {
             stat = stat_update();
             uart_com();
-            flash_led();
+            while (persist) {
+                flash_led();
+            }
         }
         if (stat == 1) {
             Sleep();

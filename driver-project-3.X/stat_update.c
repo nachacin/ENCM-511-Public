@@ -7,6 +7,7 @@ int PB2_push; // initializing PB2_push; variable holds most recent state of butt
 int PB3_push; // initializing PB3_push; variable holds most recent state of button
 int state;
 int update;
+int persist;
 
 int stat_update() {
     IEC1bits.CNIE = 0;                      // disabling interrupts to prevent ground bounce
@@ -27,10 +28,12 @@ int stat_update() {
     } else {
         state = 8;
         update = 0;
+        persist = 0;
         IEC1bits.CNIE = 1;
         return 1;
     }
-    IEC1bits.CNIE = 1;              // re-enables interrupts
     update = 0;
+    persist = 1;
+    IEC1bits.CNIE = 1;              // re-enables interrupts
     return 0;
 }

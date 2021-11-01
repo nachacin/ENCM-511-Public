@@ -62,6 +62,12 @@
  */
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation
+
+/* PROMISES: Depending on the state of the program, this function will 
+ * communicate with a receiver relaying information about what buttons are being
+ * pressed.
+ * REQUIRES: No parameters required.
+ */
 void uart_com();
 
 #endif	/* UART_COM_H */

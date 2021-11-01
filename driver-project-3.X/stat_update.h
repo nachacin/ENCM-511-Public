@@ -38,6 +38,7 @@ extern int PB2_push; // declaring PBN1_push
 extern int PB3_push; // declaring PB3_push
 extern int state;
 extern int update;
+extern int persist;
 
 // TODO Insert appropriate #include <>
 
@@ -66,6 +67,14 @@ extern int update;
  */
 // TODO Insert declarations or function prototypes (right here) to leverage 
 // live documentation
+
+
+/* PROMISES: Depending on the state of each individual pushbutton, this function
+ *           updates the state integer after passing the appropriate if-statement.
+ *           Returns a value of 1 or 0 depending on whether the program is 
+ *           sleeping or not.
+ * REQUIRES: No parameters required.
+ */
 int stat_update();
 
 #endif	/* XC_HEADER_TEMPLATE_H */

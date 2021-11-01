@@ -28,20 +28,25 @@ int main(void) {
     CLKDIV = 0; // change default timing from 2:1 to 1:1; keep frequency at 8MHz
     
     io_init();                             // Setup GPIO
-    clock_switch(8);
+    clock_switch(8); // Ensure oscillator is initially set to 8 MHz (Select 8 MHz)
     update = 1;  // trigger an update for startup
     int stat;
+    unsigned int i = 0; // debugging counter
     
    
     // IF structure checks different pushbutton conditions to execute requested conditions
     while (1) {
+        i++;
         if (update == 1) {
-            stat = stat_update();
-            uart_com();
-            flash_led();
+            stat = stat_update();   // Update system operating state
+            uart_com();             // Send uart messages corresponding to state
+            while (persist) {
+                flash_led();        // Produce LED pattern corresponding to state until a CN interrupt event
+            }
+            LED_shut_off();         // Shut off LED as a default state to return to
         }
-        if (stat == 1) {
-            Sleep();
+        if (stat == 1) {            // Stat will equal 1 if system state is 8
+            Sleep();                // Sleep until CN interrupt
         }
     }
     return (0);

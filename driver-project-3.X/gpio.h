@@ -1,5 +1,4 @@
 /* 
- * File: 
  * Course:    ENCM 511
  * Section:   L02 - B04
  * Group:     4
@@ -13,9 +12,8 @@
 
 #include "xc.h"
 
-/* This function is used to initialize all the input and outpin pins. Physical
+/* This function is used to initialize all the input and output pins. Physical
 resistors were used for pull-up and pull-down purposes. */
-
 void io_init(void);
 
 #endif

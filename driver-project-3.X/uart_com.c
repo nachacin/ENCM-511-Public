@@ -1,3 +1,11 @@
+/* 
+ * Course:    ENCM 511
+ * Section:   L02 - B04
+ * Group:     4
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
+ * Created on October 13, 2021, 5:29 PM
+ */
+
 #include "uart_com.h"
 #include "UART2.h"
 #include "stat_update.h"

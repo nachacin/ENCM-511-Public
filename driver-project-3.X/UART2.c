@@ -1,19 +1,13 @@
 /*
  * File:   UART2.c
  * Author: Rushi V
- *
  * Created on October 18, 2020, 9:32 PM
  */
-
 
 #include "xc.h"
 #include "math.h"
 #include "string.h"
-
 #include "UART2.h"
-
-
-
 
 unsigned int clkval;
 
@@ -121,9 +115,6 @@ void __attribute__ ((interrupt, no_auto_psv)) _U2TXInterrupt(void) {
 
 }
 
-
-
-
 // Displays 16 bit number in Hex form using UART2
 void Disp2Hex(unsigned int DispData) {
     char i;
@@ -147,7 +138,6 @@ void Disp2Hex(unsigned int DispData) {
     DispData = 0x0000;      // Clear DispData
     return;
 }
-
 
 void Disp2Hex32(unsigned long int DispData32)   // Displays 32 bit number in Hex form using UART2
 {
@@ -190,7 +180,6 @@ void Disp2Dec(uint16_t Dec_num)
    
     return;
 }
-
 
 void Disp2String(char *str) //Displays String of characters
 {

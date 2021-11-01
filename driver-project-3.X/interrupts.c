@@ -8,6 +8,8 @@
 #include "interrupts.h"
 #include "stat_update.h"
 
+unsigned int int_counter = 0;
+
 int CN0flag;  // Will represent a recent change of the RB4/CN1 pin
 int CN1flag;  // Will represent a recent change of the RB4/CN1 pin
 int CN30flag; // Will represent a recent change of the RA2/CN30 pin

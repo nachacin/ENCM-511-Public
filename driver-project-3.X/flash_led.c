@@ -1,3 +1,11 @@
+/* 
+ * Course:    ENCM 511
+ * Section:   L02 - B04
+ * Group:     4
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
+ * Created on October 13, 2021, 5:29 PM
+ */
+
 #include "timers.h"
 #include "stat_update.h"
 static unsigned int ctr_delay1 = 500;             // approx 1 sec (1000 ms) delay

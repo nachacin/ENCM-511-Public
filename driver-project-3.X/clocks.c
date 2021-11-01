@@ -1,3 +1,11 @@
+/* 
+ * Course:    ENCM 511
+ * Section:   L02 - B04
+ * Group:     4
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
+ * Created on October 13, 2021, 5:29 PM
+ */
+
 #include "clocks.h"
 
 /* PROMISES: This function is used to select between the different oscillators 

@@ -1,23 +1,11 @@
 /* 
  * File:   UART2.h
  * Author: rvyas
- *
  * Created on November 19, 2016, 9:22 PM
  */
 
 #ifndef UART2_H
 #define	UART2_H
-
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
 
 void InitUART2(void);
 void XmitUART2(char, unsigned int);

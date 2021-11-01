@@ -1,9 +1,8 @@
 /* 
- * File:      dp-2-main.c
  * Course:    ENCM 511
  * Section:   L02 - B04
  * Group:     4
- * Author: Nestor Chacin, Nasih Nazeem, Yahia Abrini
+ * Author: Yahia Abrini, Nasih Nazeem, Nestor Chacin
  * Created on October 13, 2021, 5:29 PM
  */
 
@@ -31,12 +30,9 @@ int main(void) {
     clock_switch(8); // Ensure oscillator is initially set to 8 MHz (Select 8 MHz)
     update = 1;  // trigger an update for startup
     int stat;
-    unsigned int i = 0; // debugging counter
     
-   
     // IF structure checks different pushbutton conditions to execute requested conditions
     while (1) {
-        i++;
         if (update == 1) {
             stat = stat_update();   // Update system operating state
             uart_com();             // Send uart messages corresponding to state

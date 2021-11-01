@@ -10,7 +10,6 @@
  *  Inputs: tmr_ticks which is an unsigned int to be used for PR2
  *          idle_on which is a flag used to trigger idle mode
  *  Return: nothing
- *
  */
 #include "timers.h"
 

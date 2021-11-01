@@ -1,5 +1,4 @@
 /* 
- * File: 
  * Course:    ENCM 511
  * Section:   L02 - B04
  * Group:     4

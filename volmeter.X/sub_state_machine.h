@@ -18,17 +18,23 @@
 
 typedef enum {
     ST_RESET,
-    ST_LED_ON,
-    ST_LED_OFF
+    ST_LED_ON1,
+    ST_LED_OFF1,
+    ST_LED_ON2,
+    ST_LED_OFF2,
+    ST_LED_ON3,
+    ST_LED_OFF3,            
 } state_t;
 /* All the possible events that can occur for this state machine.
  * Unlike states_t, these do not need to be kept in a special order.
  */
 typedef enum {
-    EV_RESET,
-    EV_ONE_PRESSED, 
-    EV_TWO_PRESSED,    // In this case two or more
-    EV_NONE_PRESSED
+    LED_EV_RESET,
+    LED_EV_PB1_PRESSED,
+    LED_EV_PB2_PRESSED,
+    LED_EV_PB3_PRESSED,
+    LED_EV_TWO_PRESSED,    // In this case two or more
+    LED_EV_NONE_PRESSED
 } event_t;
 /**
  * A user defined type that defines a state -> event -> state sequence
@@ -59,20 +65,18 @@ void StateMachine_Reset(stateMachine_t * stateMachine);
  * Iterate through the state transition matrix, checking if there is both a 
  * match with the current state and the event. Once a match is found, the 
  * function corresponding to the next state is called and current state is
- * updated.
+ * updated. "Input parameter modifies idle time.
  * @param stateMachine
  * @param event
  */
-void StateMachine_RunIteration(stateMachine_t *stateMachine, event_t event);
+void StateMachine_RunIteration(stateMachine_t *stateMachine, uint16_t input);
 /**
- * PROMISES: Maps events to various combinations of inputs
+ * PROMISES: Maps bit field representing state of array of buttons, input, to a 
+ * corresponding event of interest to this particular state machine.
  * REQUIRES: User has defined each case correctly prior to using this function.
- * @param PB1
- * @param PB2
- * @param PB3
  * @return 
  */
-event_t get_curr_event(unsigned int PB1, unsigned int PB2, unsigned int PB3);
+event_t interpret_input(uint16_t input_bit_field);
 
 #endif	/* STATE_MACHINE_H */
 

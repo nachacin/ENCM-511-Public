@@ -10,6 +10,9 @@
 #include "string.h"
 #include "UART2.h"
 
+static const unsigned int termLineLength = 60;
+static const unsigned int termLineSep = 1;
+
 unsigned int clkval;
 
 ///// Initialization of UART 2 module.
@@ -199,4 +202,47 @@ void Disp2String(char *str) //Displays String of characters
     // XmitUART2(0x0D,1);  //CR 
     
     return;
+}
+/**
+ * Wrapper function for XmitUART2() that transmits a new line and carriage 
+ * return character encoded in ASCII to the terminal. The repeat parameter, 
+ * defines how many times the process is repeated
+ */
+void Disp_new_line(unsigned int repeat){
+    while (repeat != 0) {
+        XmitUART2('\n', termLineSep);
+        XmitUART2('\r', termLineSep);
+        repeat--;
+    }
+    return;
+}
+/**
+ * Wrapper function that displays a 'delimiter' on the terminal to mark the 
+ * start of the program. The format consists of a line of '_' characters. number
+ * of '_' used is defined by static constant termLineLength in the source file
+ */
+void Disp_boot_delim() {
+    Disp_new_line(termLineSep);
+    XmitUART2('_', termLineLength);
+    Disp_new_line(termLineSep);
+    return;
+}
+/**
+ * Wrapper function that displays a 'delimiter' on the terminal to mark the 
+ * transition between states at runtime. The format consists of a line of '*' 
+ * characters. number of '*' used is defined by static constant termLineLength 
+ * in the source file
+ */
+void Disp_transition_delim() {
+    XmitUART2('*', termLineLength);
+    Disp_new_line(termLineSep);
+    return;
+}
+/**
+ * Wrapper function that adds a new line and carriage return characters to 
+ * behind strings sent to the terminal through UART
+ */
+void Disp2String_newLine(char *message) {
+    Disp2String(message);
+    Disp_new_line(termLineSep);
 }

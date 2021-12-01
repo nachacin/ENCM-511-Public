@@ -24,7 +24,7 @@
 #pragma config GCP = OFF                // General Segment Code Flash Code Protection bit (No protection)
 
 // FOSCSEL
-#pragma config FNOSC = FRCDIV           // Oscillator Select (8 MHz FRC oscillator with divide-by-N (FRCDIV))
+#pragma config FNOSC = FRC              // Oscillator Select (8 MHz FRC oscillator with divide-by-N (FRCDIV))
 #pragma config IESO = ON                // Internal External Switch Over bit (Internal External Switchover mode enabled (Two-Speed Start-up enabled))
 
 // FOSC

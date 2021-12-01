@@ -130,9 +130,7 @@ void DispADC(void) {
     XmitUART2('|', bars);
     XmitUART2('_', spacing - bars);
     Disp2Dec(raw_ave * voltage_scale);
-    Disp2String("mV");
-    XmitUART2('\n', 1);
-    XmitUART2('\r', 1);
+    Disp2String_newLine("mV");
     return;
 }
 

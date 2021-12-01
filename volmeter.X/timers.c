@@ -14,7 +14,7 @@
  *          idle_on which is a flag used to trigger idle mode
  *  Return: nothing
  */
-void delay_ms(uint16_t ms, uint8_t idle_on) {
+void delay_ms(uint16_t ms) {
     
     //T2CON config
     T2CONbits.TSIDL = 0; //operate in idle mode
@@ -56,15 +56,8 @@ void delay_ms(uint16_t ms, uint8_t idle_on) {
     TMR2 = 0;           //zero TMR2 register to start
     T2CONbits.TON = 1;  //start timer 2
     
-    if(idle_on == 1) {
-        Disp2String("Going Idle...");
-        XmitUART2('\n', 1);
-        XmitUART2('\r', 1);
-        XmitUART2('.', 13);
-        XmitUART2('\n', 1);
-        XmitUART2('\r', 1);
-        Idle();         //Enter idle state
-    }
+    Disp2String_newLine("Going Idle...");
+    Idle();         //Enter idle state
     T2CONbits.TON = 0;  //Stop timer
     TMR2 = 0;           //zero TMR2 register on exit
     return;
@@ -96,22 +89,4 @@ void delay_s(uint16_t seconds) {
     TMR3 = 0;           //zero TMR3 register to start
     T3CONbits.TON = 1;  //start timer 3
     return;
-}
-/*
- * PROMISES: Returns a user defined delay associated with parameters. If no
- *           cases are associated with the parameter combination, returns 0.
- * REQUIRES: User to define cases prior to calling.
- */
-unsigned int PB_delay(unsigned int PB1, unsigned int PB2, unsigned int PB3) {
-    unsigned buttons = PB1 + (PB2<<1) + (PB3<<2);
-    switch(buttons) {
-        case 0x01:
-            return 1000;
-        case 0x02:
-            return 2000;
-        case 0x04:
-            return 3000;
-        default:
-            return 0;
-    }
 }

@@ -11,7 +11,6 @@
       <itemPath>interrupts.h</itemPath>
       <itemPath>UART2.h</itemPath>
       <itemPath>flash_led.h</itemPath>
-      <itemPath>uart_PB_com.h</itemPath>
       <itemPath>sub_state_machine.h</itemPath>
       <itemPath>ADC.h</itemPath>
     </logicalFolder>
@@ -29,7 +28,6 @@
       <itemPath>UART2.c</itemPath>
       <itemPath>clocks.c</itemPath>
       <itemPath>flash_led.c</itemPath>
-      <itemPath>uart_PB_com.c</itemPath>
       <itemPath>sub_state_machine.c</itemPath>
       <itemPath>ADC.c</itemPath>
     </logicalFolder>
@@ -50,7 +48,7 @@
         <targetDevice>PIC24F16KA101</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.70</languageToolchainVersion>
         <platform>3</platform>
